@@ -25,7 +25,8 @@ public class ContentDownloadRoute extends SpringRouteBuilder {
                     ContentDownloadDto dto = ex.getIn().getBody(ContentDownloadDto.class);
                     ex.getIn().setHeader("CamelFileName", getRelativePath(dto));
                 })
-                .to("file:/tmp/dam-downloads/?autoCreate=true") // TODO: Investigate the possibility of using async I/O
+                .threads(10) // TODO: Investigate the possibility of using async I/O instead of threads
+                .to("file:/tmp/dam-downloads/?autoCreate=true")
                 .end();
     }
 
