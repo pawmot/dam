@@ -17,7 +17,7 @@ group 'com.pawmot.dam'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
-//apply plugin: 'spring-boot'
+apply plugin: 'spring-boot'
 
 repositories {
     mavenCentral()
@@ -37,7 +37,7 @@ dependencies {
     compile "org.apache.camel:camel-jpa:$camelVer"
 
     // hibernate
-    compile "org.hibernate:hibernate-entitymanager:5.2.1.Final"
+    compile "org.hibernate:hibernate-entitymanager:5.0.9.Final"
     compile "mysql:mysql-connector-java:6.0.3"
 
     // spring
