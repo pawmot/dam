@@ -8,3 +8,16 @@ services:
       MYSQL_ROOT_PASSWORD: secr3t
     ports:
       - "3306:3306"
+
+  activemq:
+    container_name: activemq
+    image: webcenter/activemq
+    environment:
+      ACTIVEMQ_STATIC_QUEUES: create-asset
+      ACTIVEMQ_ADMIN_PASSWORD: secr3t
+    expose:
+      - "61616"
+      - "8161"
+    ports:
+      - "61616:61616"
+      - "8161:8161"

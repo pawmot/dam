@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-class AssetMapperImpl implements AssetMapper {
-    public Asset mapDtoToEntity(AssetDto dto) {
+public class AssetDtoToAssetMapperImpl implements AssetDtoToAssetMapper {
+    public Asset map(AssetDto dto) {
         Asset asset = new Asset();
 
         if(dto.getId() != null && !dto.getId().equals("")) {
@@ -21,12 +21,4 @@ class AssetMapperImpl implements AssetMapper {
         return asset;
     }
 
-    public AssetDto mapEntityToDto(Asset entity) {
-        AssetDto dto = new AssetDto();
-        dto.setId(entity.getId().toString());
-        dto.setName(entity.getName());
-        dto.setDescription(entity.getDescription());
-        dto.setLink(entity.getLink());
-        return dto;
-    }
 }

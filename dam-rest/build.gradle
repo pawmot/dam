@@ -35,6 +35,8 @@ dependencies {
     compile "org.apache.camel:camel-jetty:$camelVer"
     compile "org.apache.camel:camel-gson:$camelVer"
     compile "org.apache.camel:camel-jpa:$camelVer"
+    compile "org.apache.camel:camel-jms:$camelVer"
+    compile "org.apache.camel:camel-stream:$camelVer"
 
     // hibernate
     compile "org.hibernate:hibernate-entitymanager:5.0.9.Final"
@@ -43,4 +45,7 @@ dependencies {
     // spring
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVer"
     compile "org.springframework:spring-orm:$springVer"
+
+    // activeMQ
+    compile "org.apache.activemq:activemq-core:5.7.0"
 }
