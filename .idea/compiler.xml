@@ -19,6 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="dam-rest_main" target="1.8" />
+      <module name="dam-rest_test" target="1.8" />
       <module name="dam_main" target="1.8" />
       <module name="dam_test" target="1.8" />
     </bytecodeTargetLevel>

@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam.iml" filepath="$PROJECT_DIR$/.idea/modules/dam.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dam_main.iml" group="dam" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dam_test.iml" group="dam" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest.iml" group="dam-rest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest_main.iml" group="dam-rest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest_test.iml" group="dam-rest" />
     </modules>
   </component>
 </project>

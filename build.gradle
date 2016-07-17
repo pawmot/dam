@@ -1,8 +1,6 @@
 group 'com.pawmot.dam'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
-
 task wrapper(type: Wrapper) {
     gradleVersion = "2.14"
 }
