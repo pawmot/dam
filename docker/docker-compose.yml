@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  db:
+    container_name: db
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secr3t
+    ports:
+      - "3306:3306"
