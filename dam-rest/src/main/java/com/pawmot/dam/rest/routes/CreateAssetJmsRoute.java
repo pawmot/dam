@@ -11,7 +11,7 @@ public class CreateAssetJmsRoute extends SpringRouteBuilder {
     public void configure() throws Exception {
         int coresCount = Runtime.getRuntime().availableProcessors();
         int poolSize = coresCount < 2 ? coresCount : coresCount/2;
-        from("jms:queue:create-asset") // TODO: move queue name to common place
+        from("jms:queue:create-asset")
                 .startupOrder(4)
                 .threads(poolSize)
                 .to(CREATE_ASSET_URL)

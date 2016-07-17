@@ -1,4 +1,4 @@
-package com.pawmot.dam.rest.dto;
+package com.pawmot.dam.common.dto;
 
 import java.util.UUID;
 

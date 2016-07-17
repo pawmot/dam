@@ -3,6 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam.iml" filepath="$PROJECT_DIR$/.idea/modules/dam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-common/dam-common.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-common/dam-common.iml" group="dam-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-common/dam-common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-common/dam-common_main.iml" group="dam-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-common/dam-common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-common/dam-common_test.iml" group="dam-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-content-download/dam-content-download.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-content-download/dam-content-download.iml" group="dam-content-download" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-content-download/dam-content-download_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-content-download/dam-content-download_main.iml" group="dam-content-download" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-content-download/dam-content-download_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-content-download/dam-content-download_test.iml" group="dam-content-download" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest.iml" group="dam-rest" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest_main.iml" group="dam-rest" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dam-rest/dam-rest_test.iml" group="dam-rest" />

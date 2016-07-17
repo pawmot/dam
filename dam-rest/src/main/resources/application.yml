@@ -2,6 +2,10 @@ jetty:
   host: "0.0.0.0"
   port: "8080"
 
+content-download-service:
+  host: "localhost"
+  port: "8081"
+
 activemq:
   host: "localhost"
   user: "admin"

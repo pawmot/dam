@@ -4,14 +4,22 @@ import com.pawmot.dam.rest.domain.Asset;
 import com.pawmot.dam.rest.domain.mapping.AssetToContentDownloadDtoMapper;
 import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import static org.apache.camel.ExchangePattern.InOnly;
+import static org.apache.camel.model.dataformat.JsonLibrary.Gson;
 
 @Component
 public class ContentDownloadRoute extends SpringRouteBuilder {
     static final String CONTENT_DOWNLOAD_ENDPOINT_URL = "direct:contentDownload";
     private final AssetToContentDownloadDtoMapper assetToContentDownloadDtoMapper;
+
+    @Value("${content-download-service.host}")
+    private String contentDownloadHost;
+
+    @Value("${content-download-service.port}")
+    private String contentDownloadPort;
 
     @Autowired
     public ContentDownloadRoute(AssetToContentDownloadDtoMapper assetToContentDownloadDtoMapper) {
@@ -29,7 +37,8 @@ public class ContentDownloadRoute extends SpringRouteBuilder {
                     return link != null && !link.equals("");
                 })
                     .bean(assetToContentDownloadDtoMapper, "map")
-                    .to(InOnly, "stream:out") // TODO: replace with URL of the second service
+                    .marshal().json(Gson)
+                    .to(InOnly, String.format("http://%1$s:%2$s/contentDownload?bridgeEndpoint=true", contentDownloadHost, contentDownloadPort))
                 .endChoice()
                 .end();
     }

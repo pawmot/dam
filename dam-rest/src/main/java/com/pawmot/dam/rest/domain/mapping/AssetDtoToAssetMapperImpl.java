@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class AssetDtoToAssetMapperImpl implements AssetDtoToAssetMapper {
+class AssetDtoToAssetMapperImpl implements AssetDtoToAssetMapper {
     public Asset map(AssetDto dto) {
         Asset asset = new Asset();
 

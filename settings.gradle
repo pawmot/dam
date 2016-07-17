@@ -1,3 +1,5 @@
 rootProject.name = 'dam'
 include 'dam-rest'
+include 'dam-content-download'
+include 'dam-common'
 
