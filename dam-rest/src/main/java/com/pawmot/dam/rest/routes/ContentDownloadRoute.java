@@ -1,7 +1,8 @@
 package com.pawmot.dam.rest.routes;
 
+import com.pawmot.dam.common.dto.ContentDownloadDto;
 import com.pawmot.dam.rest.domain.Asset;
-import com.pawmot.dam.rest.domain.mapping.AssetToContentDownloadDtoMapper;
+import com.pawmot.dam.rest.domain.mapping.Mapper;
 import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +14,7 @@ import static org.apache.camel.model.dataformat.JsonLibrary.Gson;
 @Component
 public class ContentDownloadRoute extends SpringRouteBuilder {
     static final String CONTENT_DOWNLOAD_ENDPOINT_URL = "direct:contentDownload";
-    private final AssetToContentDownloadDtoMapper assetToContentDownloadDtoMapper;
+    private final Mapper<Asset, ContentDownloadDto> assetToContentDownloadDtoMapper;
 
     @Value("${content-download-service.host}")
     private String contentDownloadHost;
@@ -22,7 +23,7 @@ public class ContentDownloadRoute extends SpringRouteBuilder {
     private String contentDownloadPort;
 
     @Autowired
-    public ContentDownloadRoute(AssetToContentDownloadDtoMapper assetToContentDownloadDtoMapper) {
+    public ContentDownloadRoute(Mapper<Asset, ContentDownloadDto> assetToContentDownloadDtoMapper) {
         this.assetToContentDownloadDtoMapper = assetToContentDownloadDtoMapper;
     }
 
@@ -33,7 +34,7 @@ public class ContentDownloadRoute extends SpringRouteBuilder {
                 .choice()
                 .when(ex -> {
                     Asset asset = ex.getIn().getBody(Asset.class);
-                    String link = asset.getLink();
+                    String link = asset.getUrl();
                     return link != null && !link.equals("");
                 })
                     .bean(assetToContentDownloadDtoMapper, "map")

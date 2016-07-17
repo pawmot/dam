@@ -31,7 +31,7 @@ public class ContentDownloadRoute extends SpringRouteBuilder {
     }
 
     private String getRelativePath(ContentDownloadDto dto) {
-        String[] pathSegments = dto.getLink().split("/");
+        String[] pathSegments = dto.getUrl().split("/");
         String filename = pathSegments[pathSegments.length-1];
 
         return String.format("%1$s/%2$s", dto.getId(), filename);

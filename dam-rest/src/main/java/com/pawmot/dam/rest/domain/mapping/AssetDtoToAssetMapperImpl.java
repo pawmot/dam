@@ -1,14 +1,14 @@
 package com.pawmot.dam.rest.domain.mapping;
 
 import com.pawmot.dam.rest.domain.Asset;
-import com.pawmot.dam.rest.dto.AssetDto;
+import com.pawmot.dam.rest.dto.NewAssetDto;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
-class AssetDtoToAssetMapperImpl implements AssetDtoToAssetMapper {
-    public Asset map(AssetDto dto) {
+class AssetDtoToAssetMapperImpl implements Mapper<NewAssetDto, Asset> {
+    public Asset map(NewAssetDto dto) {
         Asset asset = new Asset();
 
         if(dto.getId() != null && !dto.getId().equals("")) {
@@ -17,7 +17,7 @@ class AssetDtoToAssetMapperImpl implements AssetDtoToAssetMapper {
 
         asset.setName(dto.getName());
         asset.setDescription(dto.getDescription());
-        asset.setLink(dto.getLink());
+        asset.setUrl(dto.getUrl());
         return asset;
     }
 

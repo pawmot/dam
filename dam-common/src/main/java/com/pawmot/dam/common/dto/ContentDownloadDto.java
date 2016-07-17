@@ -5,7 +5,7 @@ import java.util.UUID;
 public class ContentDownloadDto {
     private UUID id;
 
-    private String link;
+    private String url;
 
     public UUID getId() {
         return id;
@@ -15,16 +15,16 @@ public class ContentDownloadDto {
         this.id = id;
     }
 
-    public String getLink() {
-        return link;
+    public String getUrl() {
+        return url;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override
     public String toString() {
-        return String.format("ContentDownloadDto{ id = '%1$s', link = '%2$s' }", id, link);
+        return String.format("ContentDownloadDto{ id = '%1$s', url = '%2$s' }", id, url);
     }
 }

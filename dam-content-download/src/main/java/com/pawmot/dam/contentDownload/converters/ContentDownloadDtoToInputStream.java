@@ -22,7 +22,7 @@ public class ContentDownloadDtoToInputStream implements TypeConverters {
     @Converter
     public InputStream convertTo(ContentDownloadDto dto) {
         try {
-            return new URL(dto.getLink()).openStream();
+            return new URL(dto.getUrl()).openStream();
         } catch (IOException ex) {
             throw new RuntimeCamelException(ex);
         }

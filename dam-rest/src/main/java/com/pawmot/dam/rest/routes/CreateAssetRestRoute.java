@@ -1,6 +1,8 @@
 package com.pawmot.dam.rest.routes;
 
-import com.pawmot.dam.rest.domain.mapping.AssetToAssetDtoMapper;
+import com.pawmot.dam.rest.domain.Asset;
+import com.pawmot.dam.rest.domain.mapping.Mapper;
+import com.pawmot.dam.rest.dto.NewAssetDto;
 import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,12 +14,12 @@ import static org.apache.camel.model.dataformat.JsonLibrary.Gson;
 @Component
 public class CreateAssetRestRoute extends SpringRouteBuilder {
     private final String jettyAddress;
-    private final AssetToAssetDtoMapper assetToAssetDtoMapper;
+    private final Mapper<Asset, NewAssetDto> assetToAssetDtoMapper;
 
     @Autowired
     public CreateAssetRestRoute(
             @Qualifier("jettyAddress") String jettyAddress,
-            AssetToAssetDtoMapper assetToAssetDtoMapper) {
+            Mapper<Asset, NewAssetDto> assetToAssetDtoMapper) {
         this.jettyAddress = jettyAddress;
         this.assetToAssetDtoMapper = assetToAssetDtoMapper;
     }
