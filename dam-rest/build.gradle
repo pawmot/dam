@@ -41,6 +41,7 @@ dependencies {
 
     // hibernate
     compile "org.hibernate:hibernate-entitymanager:5.0.9.Final"
+    compile "org.hibernate:hibernate-java8:5.0.9.Final"
 
     // mysql
     compile "mysql:mysql-connector-java:6.0.3"

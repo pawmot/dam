@@ -6,6 +6,7 @@ import org.hibernate.annotations.Type;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Entity
@@ -21,6 +22,8 @@ public class Asset {
     private String description;
 
     private String url;
+
+    private ZonedDateTime addedDateTime;
 
     public UUID getId() {
         return id;
@@ -55,4 +58,11 @@ public class Asset {
     }
 
 
+    public ZonedDateTime getAddedDateTime() {
+        return addedDateTime;
+    }
+
+    public void setAddedDateTime(ZonedDateTime addedDateTime) {
+        this.addedDateTime = addedDateTime;
+    }
 }

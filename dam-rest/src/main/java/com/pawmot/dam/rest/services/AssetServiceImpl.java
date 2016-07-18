@@ -25,6 +25,7 @@ class AssetServiceImpl implements AssetService {
 
         original.setDescription(toSave.getDescription());
         original.setName(toSave.getName());
+        original.setAddedDateTime(toSave.getAddedDateTime());
 
         return original;
     }

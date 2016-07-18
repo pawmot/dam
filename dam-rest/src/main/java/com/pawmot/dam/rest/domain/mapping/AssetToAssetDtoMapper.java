@@ -12,6 +12,7 @@ class AssetToAssetDtoMapper implements Mapper<Asset, AssetDto> {
         dto.setName(entity.getName());
         dto.setDescription(entity.getDescription());
         dto.setUrl(entity.getUrl());
+        dto.setAddedDateTimeISO(entity.getAddedDateTime().toString());
         return dto;
     }
 }

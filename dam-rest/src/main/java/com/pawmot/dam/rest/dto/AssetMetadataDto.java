@@ -7,6 +7,8 @@ public class AssetMetadataDto {
 
     private String description;
 
+    private String addedDateTimeISO;
+
     public String getId() {
         return id;
     }
@@ -29,5 +31,13 @@ public class AssetMetadataDto {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getAddedDateTimeISO() {
+        return addedDateTimeISO;
+    }
+
+    public void setAddedDateTimeISO(String addedDateTimeISO) {
+        this.addedDateTimeISO = addedDateTimeISO;
     }
 }
