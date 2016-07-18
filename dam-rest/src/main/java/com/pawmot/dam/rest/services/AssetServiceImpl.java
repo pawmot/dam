@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 class AssetServiceImpl implements AssetService {
@@ -31,5 +32,10 @@ class AssetServiceImpl implements AssetService {
     @Override
     public List<Asset> getAll() {
         return assetRepository.findAll();
+    }
+
+    @Override
+    public Asset getById(UUID id) {
+        return assetRepository.findById(id);
     }
 }
