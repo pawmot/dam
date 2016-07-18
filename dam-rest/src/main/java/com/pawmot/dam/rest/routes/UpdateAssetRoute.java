@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import static org.apache.camel.model.dataformat.JsonLibrary.Gson;
 
 @Component
-public class UpdateAssetRoute extends SpringRouteBuilder {
+class UpdateAssetRoute extends SpringRouteBuilder {
     static final String UPDATE_ASSET_URL = "direct:updateAsset";
 
     private final Mapper<AssetMetadataDto, Asset> assetMetadataDtoAssetMapper;

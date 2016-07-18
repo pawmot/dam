@@ -13,7 +13,7 @@ import static org.apache.camel.ExchangePattern.InOnly;
 import static org.apache.camel.model.dataformat.JsonLibrary.Gson;
 
 @Component
-public class ContentDownloadRoute extends SpringRouteBuilder {
+class ContentDownloadRoute extends SpringRouteBuilder {
     static final String CONTENT_DOWNLOAD_ENDPOINT_URL = "direct:contentDownload";
     private final Mapper<Asset, ContentDownloadDto> assetToContentDownloadDtoMapper;
 

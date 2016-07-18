@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import static com.pawmot.dam.rest.routes.CreateAssetRoute.CREATE_ASSET_URL;
 
 @Component
-public class CreateAssetJmsRoute extends SpringRouteBuilder {
+class CreateAssetJmsRoute extends SpringRouteBuilder {
     @Override
     public void configure() throws Exception {
         int coresCount = Runtime.getRuntime().availableProcessors();

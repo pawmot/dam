@@ -3,9 +3,6 @@ package com.pawmot.dam.rest.routes;
 import com.pawmot.dam.rest.domain.Asset;
 import com.pawmot.dam.rest.domain.mapping.Mapper;
 import com.pawmot.dam.rest.dto.AssetDto;
-import com.pawmot.dam.rest.dto.AssetMetadataDto;
-import com.pawmot.dam.rest.services.AssetService;
-import org.apache.camel.Predicate;
 import org.apache.camel.Processor;
 import org.apache.camel.converter.stream.InputStreamCache;
 import org.apache.camel.spring.SpringRouteBuilder;
@@ -18,7 +15,7 @@ import static com.pawmot.dam.rest.routes.UpdateAssetRoute.UPDATE_ASSET_URL;
 import static org.apache.camel.model.dataformat.JsonLibrary.Gson;
 
 @Component
-public class AssetPostRestRoute extends SpringRouteBuilder {
+class AssetPostRestRoute extends SpringRouteBuilder {
     private final String jettyAddress;
     private final Mapper<Asset, AssetDto> assetToAssetDtoMapper;
 

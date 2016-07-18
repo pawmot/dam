@@ -11,7 +11,7 @@ import static com.pawmot.dam.rest.routes.ContentDownloadRoute.CONTENT_DOWNLOAD_E
 import static org.apache.camel.model.dataformat.JsonLibrary.Gson;
 
 @Component
-public class CreateAssetRoute extends SpringRouteBuilder {
+class CreateAssetRoute extends SpringRouteBuilder {
     static final String CREATE_ASSET_URL = "direct:create-asset";
 
     private final Mapper<NewAssetDto, Asset> assetDtoToAssetMapper;

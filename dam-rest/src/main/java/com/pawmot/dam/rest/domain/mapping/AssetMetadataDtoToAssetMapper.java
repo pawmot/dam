@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class AssetMetadataDtoToAssetMapper implements Mapper<AssetMetadataDto, Asset> {
+class AssetMetadataDtoToAssetMapper implements Mapper<AssetMetadataDto, Asset> {
     @Override
     public Asset map(AssetMetadataDto dto) {
         Asset asset = new Asset();
