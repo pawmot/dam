@@ -1,19 +1,19 @@
 jetty:
   host: "0.0.0.0"
-  port: "8080"
+  port: "80"
 
 content-download-service:
-  host: "localhost"
-  port: "8081"
+  host: "dam-content-download"
+  port: "80"
 
 activemq:
-  host: "localhost"
+  host: "activemq"
   user: "admin"
   pass: "admin"
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost/dam?createDatabaseIfNotExist=true&useSSL=false&requireSSL=false
+    url: jdbc:mysql://db/dam?createDatabaseIfNotExist=true&useSSL=false&requireSSL=false
     username: root
     password: secr3t
     driver-class-name: com.mysql.cj.jdbc.Driver

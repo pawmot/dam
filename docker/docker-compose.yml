@@ -6,8 +6,12 @@ services:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: secr3t
+    expose:
+      - "3306"
     ports:
       - "3306:3306"
+    networks:
+      - dam-net
 
   activemq:
     container_name: activemq
@@ -21,3 +25,36 @@ services:
     ports:
       - "61616:61616"
       - "8161:8161"
+    networks:
+      - dam-net
+
+  dam-rest:
+    container_name: dam-rest
+    image: cogniteev/oracle-java:java8
+    volumes:
+      - ./artifacts/dam-rest:/app
+    entrypoint: java -jar /app/app.jar
+    networks:
+      - dam-net
+    depends_on:
+      - db
+      - activemq
+      - dam-content-download
+    restart: unless-stopped
+    expose:
+      - "80"
+    ports:
+      - "8080:80"
+
+  dam-content-download:
+    container_name: dam-content-download
+    image: cogniteev/oracle-java:java8
+    volumes:
+      - ./artifacts/dam-content-download:/app
+    entrypoint: java -jar /app/app.jar
+    networks:
+      - dam-net
+
+networks:
+  dam-net:
+    driver: bridge

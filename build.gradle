@@ -4,3 +4,29 @@ version '1.0-SNAPSHOT'
 task wrapper(type: Wrapper) {
     gradleVersion = "2.14"
 }
+
+task copyRestArtifact(type: Copy, dependsOn: ':dam-rest:assemble') {
+    from('dam-rest/build/libs/')
+
+    into('docker/artifacts/dam-rest/')
+
+    include("dam-rest-${version}.jar")
+
+    rename ("dam-rest-${version}.jar", 'app.jar')
+}
+
+task copyContentDownloadArtifact(type: Copy, dependsOn: ':dam-content-download:assemble') {
+    from('dam-content-download/build/libs/')
+
+    into('docker/artifacts/dam-content-download/')
+
+    include("dam-content-download-${version}.jar")
+
+    rename ("dam-content-download-${version}.jar", 'app.jar')
+}
+
+task dockerize(type: Exec, dependsOn: ['copyRestArtifact', 'copyContentDownloadArtifact']) {
+    workingDir './docker'
+    commandLine 'docker-compose', 'down'
+    commandLine 'docker-compose', 'up', '-d'
+}
