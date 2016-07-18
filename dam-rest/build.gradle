@@ -34,12 +34,15 @@ dependencies {
     compile "org.apache.camel:camel-spring-boot-starter:$camelVer"
     compile "org.apache.camel:camel-jetty:$camelVer"
     compile "org.apache.camel:camel-gson:$camelVer"
+    compile "org.apache.camel:camel-jsonpath:$camelVer"
     compile "org.apache.camel:camel-jpa:$camelVer"
     compile "org.apache.camel:camel-jms:$camelVer"
     compile "org.apache.camel:camel-http:$camelVer"
 
     // hibernate
     compile "org.hibernate:hibernate-entitymanager:5.0.9.Final"
+
+    // mysql
     compile "mysql:mysql-connector-java:6.0.3"
 
     // spring

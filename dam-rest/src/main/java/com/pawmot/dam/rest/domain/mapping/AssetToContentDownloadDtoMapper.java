@@ -5,7 +5,7 @@ import com.pawmot.dam.rest.domain.Asset;
 import org.springframework.stereotype.Component;
 
 @Component
-class AssetToContentDownloadDtoMapperImpl implements Mapper<Asset, ContentDownloadDto> {
+class AssetToContentDownloadDtoMapper implements Mapper<Asset, ContentDownloadDto> {
     @Override
     public ContentDownloadDto map(Asset entity) {
         ContentDownloadDto dto = new ContentDownloadDto();

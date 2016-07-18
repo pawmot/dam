@@ -13,6 +13,7 @@
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-spring-boot-starter:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-jetty:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-gson:2.17.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.camel:camel-jsonpath:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-jpa:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-jms:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-http:2.17.2" level="project" />
@@ -27,6 +28,8 @@
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-jetty9:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-core:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
+    <orderEntry type="library" name="Gradle: com.jayway.jsonpath:json-path:2.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: net.minidev:json-smart:2.2.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-spring:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-jms:4.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.3.1.RELEASE" level="project" />
@@ -70,6 +73,7 @@
     <orderEntry type="library" name="Gradle: org.apache.camel:camel-jetty-common:2.17.2" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.xml.bind:jaxb-core:2.2.11" level="project" />
     <orderEntry type="library" name="Gradle: com.sun.xml.bind:jaxb-impl:2.2.11" level="project" />
+    <orderEntry type="library" name="Gradle: net.minidev:accessors-smart:1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-aop:4.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-expression:4.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-messaging:4.3.1.RELEASE" level="project" />
@@ -90,6 +94,7 @@
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-io:9.3.10.v20160621" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-continuation:9.3.10.v20160621" level="project" />
     <orderEntry type="library" name="Gradle: org.eclipse.jetty:jetty-util:9.3.10.v20160621" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.0.3" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-juli:8.5.3" level="project" />
     <orderEntry type="library" name="Gradle: org.fusesource.hawtdispatch:hawtdispatch:1.11" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.1.7" level="project" />

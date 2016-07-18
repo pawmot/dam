@@ -1,6 +1,7 @@
 package com.pawmot.dam.rest.domain;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,7 @@ public class Asset {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Type(type = "uuid-char")
     private UUID id;
 
     private String name;
@@ -51,4 +53,6 @@ public class Asset {
     public void setUrl(String url) {
         this.url = url;
     }
+
+
 }

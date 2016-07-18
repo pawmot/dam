@@ -3,6 +3,7 @@ package com.pawmot.dam.rest.routes;
 import com.pawmot.dam.common.dto.ContentDownloadDto;
 import com.pawmot.dam.rest.domain.Asset;
 import com.pawmot.dam.rest.domain.mapping.Mapper;
+import org.apache.camel.Predicate;
 import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,14 +30,16 @@ public class ContentDownloadRoute extends SpringRouteBuilder {
 
     @Override
     public void configure() throws Exception {
+        Predicate hasContentUrl = ex -> {
+            Asset asset = ex.getIn().getBody(Asset.class);
+            String url = asset.getUrl();
+            return url != null && !url.equals("");
+        };
+
         from(CONTENT_DOWNLOAD_ENDPOINT_URL)
                 .startupOrder(2)
                 .choice()
-                .when(ex -> {
-                    Asset asset = ex.getIn().getBody(Asset.class);
-                    String link = asset.getUrl();
-                    return link != null && !link.equals("");
-                })
+                .when(hasContentUrl)
                     .bean(assetToContentDownloadDtoMapper, "map")
                     .marshal().json(Gson)
                     .to(InOnly, String.format("http://%1$s:%2$s/contentDownload?bridgeEndpoint=true", contentDownloadHost, contentDownloadPort))

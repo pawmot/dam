@@ -22,9 +22,4 @@ public class ContentDownloadDto {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    @Override
-    public String toString() {
-        return String.format("ContentDownloadDto{ id = '%1$s', url = '%2$s' }", id, url);
-    }
 }
