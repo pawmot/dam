@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 class AssetServiceImpl implements AssetService {
     private final AssetRepository assetRepository;
@@ -24,5 +26,10 @@ class AssetServiceImpl implements AssetService {
         original.setName(toSave.getName());
 
         return original;
+    }
+
+    @Override
+    public List<Asset> getAll() {
+        return assetRepository.findAll();
     }
 }

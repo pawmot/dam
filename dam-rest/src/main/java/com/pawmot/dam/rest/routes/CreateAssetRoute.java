@@ -24,7 +24,7 @@ class CreateAssetRoute extends SpringRouteBuilder {
     @Override
     public void configure() throws Exception {
         from(CREATE_ASSET_URL)
-                .startupOrder(1)
+                .startupOrder(3)
                 .unmarshal().json(Gson, NewAssetDto.class)
                 .bean(assetDtoToAssetMapper, "map")
                 .to("jpa:Asset")

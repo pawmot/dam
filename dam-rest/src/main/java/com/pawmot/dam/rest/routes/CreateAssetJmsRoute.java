@@ -12,7 +12,7 @@ class CreateAssetJmsRoute extends SpringRouteBuilder {
         int coresCount = Runtime.getRuntime().availableProcessors();
         int poolSize = coresCount < 2 ? coresCount : coresCount/2;
         from("jms:queue:create-asset")
-                .startupOrder(4)
+                .startupOrder(5)
                 .threads(poolSize)
                 .to(CREATE_ASSET_URL)
                 .end();

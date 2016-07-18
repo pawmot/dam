@@ -26,6 +26,7 @@ class UpdateAssetRoute extends SpringRouteBuilder {
     @Override
     public void configure() throws Exception {
         from(UPDATE_ASSET_URL)
+                .startupOrder(2)
                 .unmarshal().json(Gson, AssetMetadataDto.class)
                 .bean(assetMetadataDtoAssetMapper, "map")
                 .bean(assetService, "update");

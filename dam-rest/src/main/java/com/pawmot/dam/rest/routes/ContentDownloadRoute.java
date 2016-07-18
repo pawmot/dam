@@ -37,7 +37,7 @@ class ContentDownloadRoute extends SpringRouteBuilder {
         };
 
         from(CONTENT_DOWNLOAD_ENDPOINT_URL)
-                .startupOrder(2)
+                .startupOrder(1)
                 .choice()
                 .when(hasContentUrl)
                     .bean(assetToContentDownloadDtoMapper, "map")
